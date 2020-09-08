@@ -15,6 +15,8 @@ with open('data.csv', 'w', encoding='utf-8') as csvfile:
 
 events = ('3x3', '2x2', '4x4', '5x5', '6x6', '7x7', '3x3 Blindfolded', '3x3 FMC', '3x3 OH', 'Clock', 'Megaminx',
           'Pyraminx', 'Skewb', 'Square-1', '4x4 Blindfolded', '5x5 Blindfolded', '3x3 Multi-Blind', '3x3 With Feet', 'Magic', 'Master Magic', '3x3 Multi-Blind Old Style')
+
+# Grab world record history and store in "data.csv"
 i = 0
 for tbody in soup.find_all('tbody'):
     for tr in tbody.find_all('tr'):
@@ -32,6 +34,7 @@ for tbody in soup.find_all('tbody'):
                 [events[i], date, single, name, country, competition])
     i += 1
 
+# Declare "event" variable and store date and solve time for each world record
 dates = []
 times = []
 event = '3x3'
@@ -49,6 +52,7 @@ with open('data.csv', 'r', encoding='utf-8') as csvfile:
                 row[2] = row[2][-1]
             times.append(row[2])
 
+# Plot data
 x = [datetime.strptime(d, '%m/%d/%Y').date() for d in dates]
 y = times
 plt.plot(x, y, marker='o')
