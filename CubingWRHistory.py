@@ -38,6 +38,8 @@ for tbody in soup.find_all('tbody'):
 dates = []
 times = []
 event = input('Select an event: ')
+while event not in events:
+    event = input(f'{event} is not a valid event. Please input an event: ')
 with open('data.csv', 'r', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
     months = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
