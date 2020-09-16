@@ -1,1 +1,1 @@
-Change the "event" variable in line 37 to any of the events listed in "events"
+The list of events to choose from can be found in line 16.

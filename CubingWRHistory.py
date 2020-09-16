@@ -37,7 +37,7 @@ for tbody in soup.find_all('tbody'):
 # Declare "event" variable and store date and solve time for each world record
 dates = []
 times = []
-event = '3x3'
+event = input('Select an event: ')
 with open('data.csv', 'r', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
     months = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
